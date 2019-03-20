@@ -3,8 +3,7 @@ def initialize
   @board=[" "," "," "," "," "," "," "," "," "]
 end
  
-
-  WIN_COMBINATIONS = [
+WIN_COMBINATIONS = [
     [0,1,2],
     [3,4,5],
     [6,7,8],
@@ -27,11 +26,11 @@ def input_to_index(user_input)
   user_input.to_i
 end
 
-def move(index, character = "X")
-    @board[index.to_i] = character
+def move(position, player)
+    @board[position] = player
   end
 
-  def position_taken?(position)
+  def position_taken?(index)
     if @board[position] == "X" || @board[position] == "O"
       true
     else
@@ -39,9 +38,9 @@ def move(index, character = "X")
     end 
   end
 
-  def valid_move?(position)
-    position = position.to_i
-    if position.between?(0,8) && !position_taken?(position)
+  def valid_move?(index)
+    index.between?(-osition.to_i
+    if posiion.between?(0,8) && !position_taken?(position)
       true
     else
       false
